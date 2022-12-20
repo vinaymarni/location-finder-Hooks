@@ -64,7 +64,7 @@ const App = () => {
     });
 
     // Add navigation control (the +/- zoom buttons)
-    map.addControl(new mapboxgl.NavigationControl(), "top-right");
+    //map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
 
     // Clean up on unmount
