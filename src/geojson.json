@@ -1,0 +1,115 @@
+{
+	"features": [
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Nandi Hills",
+		  "description": "A northside park that is home to the Lincoln Park Zoo"
+		},
+		"geometry": {
+		  "coordinates": [77.680911,	13.368001],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Cubbon Park, M G Road",
+		  "description": "A lakefront park on Chicago's south side"
+		},
+		"geometry": {
+		  "coordinates": [77.595277, 12.977042],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Vidhana Soudha",
+		  "description": "A downtown park known for its art installations and unique architecture"
+		},
+		"geometry": {
+		  "coordinates": [77.5912695, 12.97936],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Sankey Tank",
+		  "description": "A downtown park that is the site of many of Chicago's favorite festivals and events"
+		},
+		"geometry": {
+		  "coordinates": [77.576307, 13.007754],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Shiva Temple, Airport Road",
+		  "description": "A large park on Chicago's northwest side"
+		},
+		"geometry": {
+		  "coordinates": [77.656458, 12.958042],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Lumbini Gardens",
+		  "description": "A large park near in Chicago's North Lawndale neighborhood"
+		},
+		"geometry": {
+		  "coordinates": [77.6096095, 13.043317],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Whitefield, Bengaluru",
+		  "description": "A park on the Illinois-Indiana border featuring a historic fieldhouse"
+		},
+		"geometry": {
+		  "coordinates": [77.749745, 12.969637],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "M. Chinnaswamy Stadium",
+		  "description": "A lakeside park that was the site of the 1893 World's Fair"
+		},
+		"geometry": {
+		  "coordinates": [77.5993895, 12.978475],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "UB City Mall",
+		  "description": "A large park in Chicago's Austin neighborhood"
+		},
+		"geometry": {
+		  "coordinates": [77.5954025, 12.9721545],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Charminar, Old City, Hyderabad",
+		  "description": "A large park in Chicago's Austin neighborhood"
+		},
+		"geometry": {
+		  "coordinates": [78.474667, 17.361581],
+		  "type": "Point"
+		}
+	  }
+	],
+	"type": "FeatureCollection"
+  }
