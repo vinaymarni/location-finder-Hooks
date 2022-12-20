@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "./App.css";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import Fly from "./Components/Fly";
 import DataShow from "./Components/DataShow";
@@ -64,7 +65,7 @@ const App = () => {
     });
 
     // Add navigation control (the +/- zoom buttons)
-    map.addControl(new mapboxgl.NavigationControl(), "top-right");
+    //map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
 
     // Clean up on unmount
