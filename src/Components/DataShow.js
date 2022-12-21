@@ -28,7 +28,8 @@ function App() {
             return(
             <div key={each.id} className="box_container">
               <div className="top_container">
-                <p>{each.id}:  </p><h3> {each.place}</h3>
+                {/*<p>{each.id}:  </p>*/}
+                <h1 className="place-heading"> {each.place}</h1>
               </div>
               <div className="coordinates_container">
                 <h3>Longitude : </h3><p style={{marginRight: "10px", marginLeft: "5px"}}>{each.lon}</p>
