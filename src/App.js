@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
+import ReactDOM from 'react-dom/client';
 import "./App.css";
-import 'mapbox-gl/dist/mapbox-gl.css';
 
+import Tooltip from './Components/Tooltip';
 import Fly from "./Components/Fly";
 import DataShow from "./Components/DataShow";
 import geoJson from "./geojson.json";
@@ -12,6 +13,7 @@ mapboxgl.accessToken =
 
 const App = () => {
   const mapContainerRef = useRef(null);
+  const tooltipRef = useRef(new mapboxgl.Popup({ offset: 15 }));
 
   const [lng, setLng] = useState(77.5913);
   const [lat, setLat] = useState(12.97912);
@@ -65,8 +67,47 @@ const App = () => {
     });
 
     // Add navigation control (the +/- zoom buttons)
-    //map.addControl(new mapboxgl.NavigationControl(), "top-right");
+    map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
+// Testing of popup featire////////////////////////////////
+
+
+ // change cursor to pointer when user hovers over a clickable feature
+ map.on('mouseenter', e => {
+  if (e.features.length) {
+    console.log(e)
+    map.getCanvas().style.cursor = 'pointer';
+  }
+});
+
+// reset cursor to default when user is no longer hovering over a clickable feature
+map.on('mouseleave', () => {
+  map.getCanvas().style.cursor = '';
+});
+
+// add tooltip when users mouse move over a point
+map.on('mousemove', e => {
+  const features = map.queryRenderedFeatures(e.point);
+  if (features.length) {
+    const feature = features[0];
+    //console.log(feature)
+
+    // Create tooltip node
+    const tooltipNode = document.createElement('div');
+    //ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
+
+    const root = ReactDOM.createRoot(tooltipNode);
+    root.render(
+      <Tooltip feature={feature} />
+    );
+
+    // Set tooltip on map
+    tooltipRef.current
+      .setLngLat(e.lngLat)
+      .setDOMContent(tooltipNode)
+      .addTo(map);
+  }
+});
 
     // Clean up on unmount
     return () => map.remove();
