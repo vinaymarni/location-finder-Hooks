@@ -22,16 +22,15 @@ function App() {
           <button className="data-buttons" onClick={()=> setContainerDisplay("none")}>Clear</button>
         </div>   
         <div style={{display: containerDisplay}}>
-          <h1 style={{color: "white"}}>History</h1>        
+          <h1 className="history-heading">History</h1>        
           <div>
             {data.map((each) => {
             return(
             <div key={each.id} className="box_container">
-              <div className="top_container">
-                {/*<p>{each.id}:  </p>*/}
+              
                 <h1 className="place-heading"> {each.place}</h1>
-              </div>
-              <div className="coordinates_container">
+              
+              <div className="coordinates_con">
                 <h3>Longitude : </h3><p style={{marginRight: "10px", marginLeft: "5px"}}>{each.lon}</p>
                 <h3>Latitude : </h3><p style={{marginRight: "10px", marginLeft: "5px"}}>{each.lat}</p>
               </div>

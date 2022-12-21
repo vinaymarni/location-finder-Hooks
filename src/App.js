@@ -17,6 +17,8 @@ const App = () => {
 
   const [lng, setLng] = useState(77.5913);
   const [lat, setLat] = useState(12.97912);
+  const [lati, setLati] = useState(0)
+  const [lang, setLang] = useState(0)
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -75,7 +77,6 @@ const App = () => {
  // change cursor to pointer when user hovers over a clickable feature
  map.on('mouseenter', e => {
   if (e.features.length) {
-    console.log(e)
     map.getCanvas().style.cursor = 'pointer';
   }
 });
@@ -87,26 +88,31 @@ map.on('mouseleave', () => {
 
 // add tooltip when users mouse move over a point
 map.on('mousemove', e => {
-  const features = map.queryRenderedFeatures(e.point);
-  if (features.length) {
-    const feature = features[0];
-    //console.log(feature)
-
-    // Create tooltip node
-    const tooltipNode = document.createElement('div');
-    //ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
-
-    const root = ReactDOM.createRoot(tooltipNode);
-    root.render(
-      <Tooltip feature={feature} />
-    );
-
-    // Set tooltip on map
-    tooltipRef.current
-      .setLngLat(e.lngLat)
-      .setDOMContent(tooltipNode)
-      .addTo(map);
-  }
+    setLati(e.lngLat.wrap().lat)
+    setLang(e.lngLat.wrap().lng)
+ 
+    const features = map.queryRenderedFeatures(e.point);
+    if (features.length) {
+  
+      const feature = features[0];
+      //console.log(feature)
+  
+      // Create tooltip node
+      const tooltipNode = document.createElement('div');
+      //ReactDOM.render(<Tooltip feature={feature} />, tooltipNode);
+  
+      const root = ReactDOM.createRoot(tooltipNode);
+      root.render(
+        <Tooltip feature={feature} coordinates={""} />
+      );
+  
+      // Set tooltip on map
+      tooltipRef.current
+        .setLngLat(e.lngLat)
+        .setDOMContent(tooltipNode)
+        .addTo(map);
+    }
+  
 });
 
     // Clean up on unmount
@@ -123,6 +129,10 @@ map.on('mousemove', e => {
 			    <h3>Latitude : </h3><span>{lat}</span>
 		    </div>
 	    </div>
+      <div className = "dispaly-coordinaters">
+        <h2 style={{color: "black", fontSize: "20px", fontWeight: "bold"}}>Lati : </h2><span style={{color: "blue"}}>{lati}</span>
+        <h2 style={{color: "black", fontSize: "20px", fontWeight: "bold"}}>Long : </h2><span style={{color: "blue"}}>{lang}</span>    
+      </div>
       <div className="map-container" ref={mapContainerRef}/>
       <DataShow />
     </div>
