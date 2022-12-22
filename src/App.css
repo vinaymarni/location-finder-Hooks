@@ -8,10 +8,14 @@
   color: #ffffff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: underline;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight:bold;
 }
 
 .main_container{
-  background-color: rgb(42, 32, 58);
+  background-image: url("https://i.pinimg.com/236x/9d/b0/89/9db089d1916d46e42b22ff83fcd3f38b.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,5 +46,36 @@ span{
 
 h3{
   color: #fff;
+  font-weight: bold;
+  font-size: 20px;
 }
 
+#info {
+  display: table;
+  position: relative;
+  margin: 0px auto;
+  word-wrap: anywhere;
+  white-space: pre-wrap;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #222;
+  background: #fff;
+  }
+  .dispaly-coordinaters{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    height:40px;
+    width: 600px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  

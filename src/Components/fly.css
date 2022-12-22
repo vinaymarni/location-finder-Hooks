@@ -32,6 +32,8 @@
     cursor: pointer;
     width: 50px;
     font-size: 20px;
+    padding-left: 12px;
+    border-radius: 5px;
   }
 
   h2{
