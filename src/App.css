@@ -14,7 +14,8 @@
 }
 
 .main_container{
-  background-color: rgb(42, 32, 58);
+  background-image: url("https://i.pinimg.com/236x/9d/b0/89/9db089d1916d46e42b22ff83fcd3f38b.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
